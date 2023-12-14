@@ -6,7 +6,6 @@ const port = 3000;
 const path = require("path");
 
 let db = new sqlite3.Database(__dirname + '/../gik339-labb2.db');
-//console.log(db.all("SELECT * FROM USERS"));
 
 server.use(express.json())
 .use("/", express.static(path.resolve(__dirname, 'public')))
@@ -38,30 +37,9 @@ server.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
 });
 
-server.get('/client/scripts.js', (req, res) =>{
+server.get('/client/scripts.js', (req, res) => {
     res.sendFile(path.join(__dirname, "../scripts/script.js"));
 });
-
-//server.get('/', (req, res) =>{
-//	fs.readFile(__dirname + '/../client/index.html')
-//		.then(
-//			function(contents)
-//			{
-//				res.setHeader("Content-Type", "text/html");
-//				res.writeHead(200);
-//				res.end(contents);
-//				console.log(`url = ${req.url}`);
-//			},
-//			function(error)
-//			{
-//				res.writeHead(404);
-//				res.end();
-//				//res.end("assint nö");
-//				console.log(`404 error at url = ${req.url}`);
-//			}
-//	    	)
-//});
-
 
 server.listen(port, () =>{
     console.log(`Server lyssnar på port: ${port}`);
