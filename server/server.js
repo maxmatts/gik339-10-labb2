@@ -1,6 +1,8 @@
 const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
 const server = express();
 const port = 3000;
+
 
 server.use(express.json())
 .use(express.urlencoded({extended: false}))
@@ -13,7 +15,18 @@ server.use(express.json())
 });
 
 server.get('/users', (req, res) =>{
-    res.send("Välkommen till users");
+    let db = new sqlite3.Database('../gik339-labb2.db');
+    let sql = "SELECT * FROM USERS";
+
+    db.all(sql, (err, rows) =>{
+        if(err){
+            res.status(500).send(err);
+        }else{
+            res.send(rows);
+            console.log(rows);
+        }
+    });
+    
 });
 
 
