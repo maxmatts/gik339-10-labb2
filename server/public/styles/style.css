@@ -1,5 +1,6 @@
 :root {
 	font-size: 62.5%; /*1.6rem = 16px*/
+	--foreground-color: #6f7665;
 }
 *,
 *::before,
@@ -9,5 +10,23 @@
 	padding: 0px;
 }
 body{
+	font-family: "Arial";
+	color: var(--foreground-color);
+	background-color: #0c0c0c;
 	font-size: 1.6rem;
+}
+
+h1{
+	padding: 0.4rem 1rem 0 1rem;
+	font-size: 2.8rem;
+}
+h2{
+	padding: 0.4rem 1rem 0 1rem;
+	font-size: 2rem;
+}
+p{
+	padding: 0.8rem 1rem 0.8rem 1rem;
+}
+header{
+	border-bottom: 1px solid var(--foreground-color);
 }
