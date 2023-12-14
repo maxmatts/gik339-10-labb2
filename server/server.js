@@ -1,6 +1,5 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
-const fs = require("fs").promises;
 const server = express();
 const port = 3000;
 const path = require("path");

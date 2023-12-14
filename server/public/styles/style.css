@@ -30,3 +30,18 @@ p{
 header{
 	border-bottom: 1px solid var(--foreground-color);
 }
+ul{
+	list-style-type: none;
+}
+ul li{
+	color: #fff;
+	display: grid;
+	padding: 1.6rem;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	border: .1rem solid;
+	margin-bottom: .5rem;
+}
+ul li span{
+	
+}
