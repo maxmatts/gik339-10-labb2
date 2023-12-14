@@ -26,12 +26,10 @@ server.get('/users', (req, res) =>{
             res.status(500).send(err);
         }else{
             res.send(rows);
-            console.log(rows);
         }
     });
     
 });
-console.log(__dirname);
 
 server.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
