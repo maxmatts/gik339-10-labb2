@@ -3,6 +3,8 @@ const sqlite3 = require('sqlite3').verbose();
 const server = express();
 const port = 3000;
 
+let db = new sqlite3.Database('./gik339-labb2.db');
+//console.log(db.all("SELECT * FROM USERS"));
 
 server.use(express.json())
 .use(express.urlencoded({extended: false}))
@@ -15,7 +17,6 @@ server.use(express.json())
 });
 
 server.get('/users', (req, res) =>{
-    let db = new sqlite3.Database('../gik339-labb2.db');
     let sql = "SELECT * FROM USERS";
 
     db.all(sql, (err, rows) =>{
