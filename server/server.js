@@ -34,10 +34,6 @@ server.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
 });
 
-server.get('/client/scripts.js', (req, res) => {
-    res.sendFile(path.join(__dirname, "../scripts/script.js"));
-});
-
 server.get('*', (req,res) =>{
     res.send("404, vart är du någonstans?");
 });
